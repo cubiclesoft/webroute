@@ -51,8 +51,8 @@ Returns:  A standard array of information.
 
 This internal-ish function runs the core state engine behind the scenes against the input state.  This is the primary workhorse of the WebRoute class.
 
-WebRoute::Connect($url, $id = false, $profile = "auto", $options = array(), $web = false)
------------------------------------------------------------------------------------------
+WebRoute::Connect($url, $id = false, $options = array(), $web = false)
+----------------------------------------------------------------------
 
 Access:  public
 
@@ -60,7 +60,6 @@ Parameters:
 
 * $url - A string containing a WebRoute URL (starts with wr:// or wrs://).
 * $id - A boolean of false to generate an ID via the CubicleSoft CSPRNG class or a string containing an ID generated with a CSPRNG (Default is false).
-* $profile - A string containing a valid WebBrowser class profile string (Default is "auto").
 * $options - An array of valid WebBrowser class options (Default is array()).
 * $web - A valid WebBrowser class instance (Default is false, which means one will be created).
 
@@ -68,8 +67,8 @@ Returns:  An array containing the results of the call.
 
 This function initiates a connection to a WebRoute server via the WebBrowser class.  If you set up your own WebBrowser class (e.g. to handle cookies), pass it in as the $web parameter to use your class instance for the connection.
 
-WebRoute::ConnectAsync($helper, $key, $callback, $url, $id = false, $profile = "auto", $options = array(), $web = false)
-------------------------------------------------------------------------------------------------------------------------
+WebRoute::ConnectAsync($helper, $key, $callback, $url, $id = false, $options = array(), $web = false)
+-----------------------------------------------------------------------------------------------------
 
 Access:  public
 
@@ -80,7 +79,6 @@ Parameters:
 * $callback - An optional callback function to receive regular status updates on the request (specify NULL if not needed).  The callback function must accept three parameters - callback($key, $url, $result).
 * $url - A string containing a WebRoute URL (starts with wr:// or wrs://).
 * $id - A boolean of false to generate an ID via the CubicleSoft CSPRNG class or a string containing an ID generated with a CSPRNG (Default is false).
-* $profile - A string containing a valid WebBrowser class profile string (Default is "auto").
 * $options - An array of valid WebBrowser class options (Default is array()).
 * $web - A valid WebBrowser class instance (Default is false, which means one will be created).
 
