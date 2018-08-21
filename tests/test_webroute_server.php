@@ -19,8 +19,6 @@
 
 	echo "Ready.\n";
 
-	$tracker = array();
-
 	do
 	{
 		$result = $wrserver->Wait();
@@ -28,7 +26,7 @@
 		// Do something with active clients.
 		foreach ($result["clients"] as $id => $client)
 		{
-			if (!isset($tracker[$id]))
+			if ($client->appdata === false)
 			{
 				echo "Client ID " . $id . " connected.\n";
 
@@ -43,22 +41,20 @@
 
 				echo "Valid access key used.\n";
 
-				$tracker[$id] = array();
+				$client->appdata = array();
 			}
 		}
 
 		// Do something with removed clients.
 		foreach ($result["removed"] as $id => $result2)
 		{
-			if (isset($tracker[$id]))
+			if ($result2["client"]->appdata !== false)
 			{
 				echo "Client ID " . $id . " disconnected.\n";
 
 //				echo "Client ID " . $id . " disconnected.  Reason:\n";
 //				var_dump($result2["result"]);
 //				echo "\n";
-
-				unset($tracker[$id]);
 			}
 		}
 	} while (1);
