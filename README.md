@@ -5,7 +5,7 @@ This is the official reference implementation of the WebRoute Internet protocol.
 
 The WebRoute protocol links two TCP/IP endpoints together via shared unique IDs and then transitions linked connections into a simple TCP/IP passthrough.  A WebRoute server is intended to be deployed as a reverse proxy behind a standard web server (e.g. Apache or Nginx).  The method by which clients initiate a connection is not dissimilar to WebSocket Upgrade but without all of the framing baggage that WebSocket brings to the table.
 
-[![Donate](https://cubiclesoft.com/res/donate-shield.png)](https://cubiclesoft.com/donate/)
+[![Donate](https://cubiclesoft.com/res/donate-shield.png)](https://cubiclesoft.com/donate/) [![Discord](https://img.shields.io/discord/777282089980526602?label=chat&logo=discord)](https://cubiclesoft.com/product-support/github/)
 
 Features
 --------
